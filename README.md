@@ -2,9 +2,9 @@
 Hotel Booking System API - Holly_Anderson_p1
 
 ## Concept
-- p1.5.1 - A REST service, this allows crud commands on an api which connects to a SQL database.
-- p1.5.2 - A RESTful API, this is the only application that the client should interface with - all data flows through this API.
-- p1.5.3 - A SOAP service, this is the app that handles rooms.
+- p1.1 - A REST service, this allows crud commands on an api which connects to a SQL database.
+- p1.2 - A RESTful API, this is the only application that the client should interface with - all data flows through this API.
+- p1.3 - A SOAP service, this is the app that handles rooms.
 
 ## Required Features
 
