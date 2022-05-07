@@ -1,4 +1,4 @@
-package com.holly.utility;
+package com.holly;
 
 import javax.xml.ws.Endpoint;
 
@@ -9,7 +9,7 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.holly.service.HotelServiceImpl;
+import com.holly.service.RoomServiceImpl;
 
 
 /*
@@ -43,8 +43,8 @@ public class JaxConfig {
 		}
 		
 		@Bean
-		public HotelServiceImpl hotelServiceImpl() {
-			return new HotelServiceImpl();
+		public RoomServiceImpl hotelServiceImpl() {
+			return new RoomServiceImpl();
 		}
 		
 		@Bean
