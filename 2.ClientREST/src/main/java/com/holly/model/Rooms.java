@@ -6,9 +6,6 @@ public class Rooms {
 
 	private String roomId;
 
-	public Rooms() {
-		super();
-	}
 
 	public long getId() {
 		return id;

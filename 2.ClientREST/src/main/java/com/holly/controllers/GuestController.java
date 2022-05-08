@@ -25,8 +25,8 @@ public class GuestController {
 	
 	// CREATE
 	@PostMapping("/guest/new")
-	public Guest saveGuest(@RequestBody Guest guest) {
-	ResponseEntity<Guest> response = restTemplate1.postForEntity("http://localhost:8080/guest/all", guest, Guest.class);
+	public String createGuest(@RequestBody Guest guest) {
+	ResponseEntity<String> response = restTemplate1.postForEntity("http://localhost:8080/guest/new", guest, String.class);
 	return response.getBody();
 	}
 	

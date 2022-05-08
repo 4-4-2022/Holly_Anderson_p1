@@ -1,16 +1,18 @@
 package com.holly.model;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Guest {
 	
-	private int guest_id;
 	private String guest_username;
 	private String guest_pass;
 	private String guest_firstname;
 	private String guest_lastname;
 	private boolean guest_administrator;
+	private int guest_id;
 	
 	public Guest(int guest_id, String guest_username, String guest_pass, String guest_firstname, String guest_lastname,
 			boolean guest_administrator) {
@@ -76,6 +78,24 @@ public class Guest {
 		return "Guest [guest_id=" + guest_id + ", guest_username=" + guest_username + ", guest_pass=" + guest_pass
 				+ ", guest_firstname=" + guest_firstname + ", guest_lastname=" + guest_lastname
 				+ ", guest_administrator=" + guest_administrator + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(guest_administrator, guest_firstname, guest_id, guest_lastname, guest_pass, guest_username);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Guest))
+			return false;
+		Guest other = (Guest) obj;
+		return guest_administrator == other.guest_administrator
+				&& Objects.equals(guest_firstname, other.guest_firstname) && guest_id == other.guest_id
+				&& Objects.equals(guest_lastname, other.guest_lastname) && Objects.equals(guest_pass, other.guest_pass)
+				&& Objects.equals(guest_username, other.guest_username);
 	}
 
 }

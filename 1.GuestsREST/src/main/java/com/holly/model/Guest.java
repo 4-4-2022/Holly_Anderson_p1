@@ -1,35 +1,28 @@
 package com.holly.model;
 
-import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity // informs jpa that class and objects should be persisted
 public class Guest {
-	
+
 	private String guest_username;
 	private String guest_pass;
 	private String guest_firstname;
 	private String guest_lastname;
 	private boolean guest_administrator;
+	@Id
 	private int guest_id;
-	
-	public Guest(int guest_id, String guest_username, String guest_pass, String guest_firstname, String guest_lastname,
-			boolean guest_administrator) {
+
+	public Guest() {
 		super();
-		this.guest_id = guest_id;
+	}
+
+	public Guest(String guest_username, String guest_pass, String guest_firstname, String guest_lastname,
+			boolean guest_administrator, int guest_id) {
+		super();
 		this.guest_username = guest_username;
-		this.guest_pass = guest_pass;
 		this.guest_firstname = guest_firstname;
-		this.guest_lastname = guest_lastname;
-		this.guest_administrator = guest_administrator;
-	}
-
-	public int getGuest_id() {
-		return guest_id;
-	}
-
-	public void setGuest_id(int guest_id) {
 		this.guest_id = guest_id;
 	}
 
@@ -73,29 +66,28 @@ public class Guest {
 		this.guest_administrator = guest_administrator;
 	}
 
+	public int getGuest_id() {
+		return guest_id;
+	}
+
+	public void setGuest_id(int guest_id) {
+		this.guest_id = guest_id;
+	}
+
 	@Override
 	public String toString() {
-		return "Guest [guest_id=" + guest_id + ", guest_username=" + guest_username + ", guest_pass=" + guest_pass
-				+ ", guest_firstname=" + guest_firstname + ", guest_lastname=" + guest_lastname
-				+ ", guest_administrator=" + guest_administrator + "]";
+		return "Guest [guest_username=\" + guest_username + \", guest_pass=" + guest_pass + ", guest_firstname="
+				+ guest_firstname + ", guest_lastname=" + guest_lastname + ", guest_administrator="
+				+ guest_administrator + ", guest_id=" + guest_id + ", ]";
 	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(guest_administrator, guest_firstname, guest_id, guest_lastname, guest_pass, guest_username);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!(obj instanceof Guest))
-			return false;
-		Guest other = (Guest) obj;
-		return guest_administrator == other.guest_administrator
-				&& Objects.equals(guest_firstname, other.guest_firstname) && guest_id == other.guest_id
-				&& Objects.equals(guest_lastname, other.guest_lastname) && Objects.equals(guest_pass, other.guest_pass)
-				&& Objects.equals(guest_username, other.guest_username);
-	}
-
 }
+
+//input json for postman
+//{
+//	  "guest_id": 1,
+//	  "guest_administrator": true,
+//	  "guest_firstname": "holly",
+//	  "guest_username": "h0lly",
+//	"guest_pass": "1243",
+//	  "guest_lastname": "anderson"
+//	}
