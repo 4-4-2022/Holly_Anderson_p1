@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 
 import com.holly.service.RoomServiceImpl;
 
-
 /*
  * adding beans to the container in order to use JaxWS. 
  */
@@ -43,18 +42,18 @@ public class JaxConfig {
 		}
 		
 		@Bean
-		public RoomServiceImpl hotelServiceImpl() {
+		public RoomServiceImpl roomServiceImpl() {
 			return new RoomServiceImpl();
 		}
 		
 		@Bean
 		public Endpoint endpoint() {
-			EndpointImpl endpoint = new EndpointImpl(springBus(), hotelServiceImpl());
+			EndpointImpl endpoint = new EndpointImpl(springBus(), roomServiceImpl());
 			/*
 			 * We need to expose the endpoing under an address. We have to publish endpoint ourself; it's not immediately
 			 * consumable.
 			 */
-			endpoint.publish("/hotel-service");
+			endpoint.publish("/room-service");
 			return endpoint;
 		}
 	}

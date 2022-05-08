@@ -22,7 +22,7 @@ public class Room {
 	@Column(name = "room_floornum")
 	private int room_floornum;
 	
-	public Room(int i, int j, int k, int l) {}
+	public Room() {}
 
 	public int getRoom_id() {
 		return room_id;

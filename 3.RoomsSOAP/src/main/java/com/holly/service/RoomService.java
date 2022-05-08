@@ -13,6 +13,7 @@ import com.holly.model.Room;
 public interface RoomService {
 	
 	public List<Room> findAll();
+	public Room findById(String id);
 	public Room updateRoom(Room room);
-
+	public void deleteById(String id);
 }
