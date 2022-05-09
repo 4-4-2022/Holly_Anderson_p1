@@ -10,8 +10,8 @@ Hotel Booking System API - Holly_Anderson_p1
 
 - [x] Documentation (all methods should have basic documentation)
 - [ ] Unit testing (at least 30 unit tests)
-- [ ] Logging
-- [ ] 1 Java application that will serve as a public-facing REST API
+- [x] Logging
+- [x] 1 Java application that will serve as a public-facing REST API
 - [x] At least 2 additional Java applications that will handle parts of the logic
 - [x] At least 1 of the applications must be a SOAP service
 - [x] All services must have their own, unique data source(s)
@@ -25,8 +25,8 @@ Hotel Booking System API - Holly_Anderson_p1
 
 - [x] Java
 - [x] JUnit
-- [ ] Mockito
-- [ ] Logback
+- [x] Mockito
+- [x] Logback
 - [x] Git SCM (on GitHub)
 - [x] Spring Framework
 - [x] Spring Data JPA
@@ -34,7 +34,7 @@ Hotel Booking System API - Holly_Anderson_p1
 - [x] ActiveMQ
 - [x] REST
 - [x] SOAP
-- [ ] Spring Transactions (JTA)
+- [x] Spring Transactions (JTA)
 
 ## Notes
  - JTA - reservation info includes guest and room info
