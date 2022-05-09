@@ -7,7 +7,7 @@ Hotel Booking System API - Holly_Anderson_p1
 - 3.RoomsSoap - A SOAP service, this is the app that handles rooms.
 
 ## Functionality 
-### 2.ClientREST- Run these on localhost
+#### 2.ClientREST- Run these on localhost 
 - POST /rooms/new - create new room
 - GET /rooms/all - read all rooms 
 - PUT /rooms/update - edit room info
