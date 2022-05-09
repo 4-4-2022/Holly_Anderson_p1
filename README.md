@@ -6,6 +6,19 @@ Hotel Booking System API - Holly_Anderson_p1
 - p1.2 - A RESTful API, this is the only application that the client should interface with - all data flows through this API.
 - p1.3 - A SOAP service, this is the app that handles rooms.
 
+## Functionality - Consumer Service - Run these on localhost
+- POST /rooms/new - create new room
+- GET /rooms/all - read all rooms 
+- PUT /rooms/update - edit room info
+- DELETE /rooms/delete - delete room from DB
+- GET /rooms/test - tests connection to java without SQL
+- GET /guest/all - read all guests
+- POST /guest/new - create new guest
+- GET /guest/{id} - read info on one guest
+- PUT /guest/update - edit guest info 
+- DELETE /guest/delete - delete guest from DB
+- GET /guest/test - tests connection to java without SQL
+
 ## Required Features
 
 - [x] Documentation (all methods should have basic documentation)
