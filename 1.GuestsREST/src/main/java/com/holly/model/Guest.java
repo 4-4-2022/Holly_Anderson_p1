@@ -1,5 +1,7 @@
 package com.holly.model;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -79,6 +81,24 @@ public class Guest {
 		return "Guest [guest_username=\" + guest_username + \", guest_pass=" + guest_pass + ", guest_firstname="
 				+ guest_firstname + ", guest_lastname=" + guest_lastname + ", guest_administrator="
 				+ guest_administrator + ", guest_id=" + guest_id + ", ]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(guest_administrator, guest_firstname, guest_id, guest_lastname, guest_pass, guest_username);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Guest))
+			return false;
+		Guest other = (Guest) obj;
+		return guest_administrator == other.guest_administrator
+				&& Objects.equals(guest_firstname, other.guest_firstname) && guest_id == other.guest_id
+				&& Objects.equals(guest_lastname, other.guest_lastname) && Objects.equals(guest_pass, other.guest_pass)
+				&& Objects.equals(guest_username, other.guest_username);
 	}
 }
 

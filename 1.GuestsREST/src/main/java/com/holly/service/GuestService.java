@@ -15,7 +15,9 @@ public class GuestService implements GuestRepositoryImpl {
 
 	@Autowired
 	private GuestRepo repository;
-
+	
+	
+	// create new guest
 	public Guest addGuest(Guest guest) {
 		return repository.save(guest);
 	}
@@ -25,7 +27,7 @@ public class GuestService implements GuestRepositoryImpl {
 		return this.repository.findAll();
 	}
 
-	// reas single guest
+	// reads single guest
 	public Guest getGuestbyId(int guest_id) {
 		Optional<Guest> guest = repository.findById(guest_id);
 		if (guest.isPresent()) {
@@ -34,13 +36,9 @@ public class GuestService implements GuestRepositoryImpl {
 		throw new RuntimeException("guest " + guest_id + " does not exist");
 	}
 
-	public Guest deleteGuest(Guest guest) {
-		repository.delete(guest);
-		return null;
-	}
-
 	@Override
-	public Guest delete(Guest guest) {
+	public Guest deleteGuest(Guest guest) {
+		this.repository.delete(guest);
 		return null;
 	}
 
@@ -53,5 +51,11 @@ public class GuestService implements GuestRepositoryImpl {
 	public Guest save(Guest guest) {
 		return null;
 
+	}
+
+	@Override
+	public Guest delete(Guest guest) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

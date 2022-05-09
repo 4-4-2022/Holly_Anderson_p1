@@ -1,25 +1,13 @@
 package com.holly.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "rooms")
 public class Room {
 	
-	@Id
-	@Column(name = "room_id")
 	private int room_id;
 	
-	@Column(name = "room_beds")
 	private int room_beds;
-	
-	@Column(name = "room_baths")
+
 	private int room_baths;
 	
-	@Column(name = "room_floornum")
 	private int room_floornum;
 	
 	public Room() {}

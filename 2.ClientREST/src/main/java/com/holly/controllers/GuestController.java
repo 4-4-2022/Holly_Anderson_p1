@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -24,14 +25,14 @@ public class GuestController {
 	private RestTemplate restTemplate1;
 	
 	// CREATE
-	@PostMapping("/guest/new")
+	@PostMapping("/newG")
 	public String createGuest(@RequestBody Guest guest) {
 	ResponseEntity<String> response = restTemplate1.postForEntity("http://localhost:8080/guest/new", guest, String.class);
 	return response.getBody();
 	}
 	
 	// READ
-	@GetMapping("/all")
+	@GetMapping("/allG")
 	public List<Guest> findAll() {
 		ResponseEntity<List> guests = restTemplate1.getForEntity("http://localhost:8080/guest/all", List.class);
 		List<Guest> guestList = guests.getBody();
@@ -39,15 +40,15 @@ public class GuestController {
 	}
 	
 	// UPDATE
-	@PutMapping("/guest/update/{id}")
-	public void updateGuestById(@PathVariable Long id, @RequestBody Guest guest) {
-		restTemplate1.put("http://localhost:8080/guest" + id, guest);
+	@PutMapping("/update/{guest_id}")
+	public void updateGuestById(@PathVariable Integer guest_id, @RequestBody Guest guest) {
+		restTemplate1.put("http://localhost:8080/guest/update" + guest_id, guest);
 	}
-	
+	 
 	// DELETE
-	@DeleteMapping("/guest/delete")
-	public void deleteGuestById(@RequestBody Long id) {
-		restTemplate1.delete("http://localhost:8080/guest?id=" + id);
+	@DeleteMapping("/deleteG")
+	public void deleteGuest(@RequestParam Guest guest) {
+		restTemplate1.delete("http://localhost:8080/guest/delete" + guest);
 	}
 	
 	// SECONDARY

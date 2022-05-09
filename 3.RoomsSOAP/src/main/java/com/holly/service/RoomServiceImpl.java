@@ -26,9 +26,28 @@ private RoomRepository hotelRepository;
 		this.hotelRepository = hotelRepository;
 	}
 	
+	// CREATE
+	@WebMethod
+	public Room saveRoom(Room room) {
+		return this.hotelRepository.save(room);
+	}
+	
+	// READ 
 	@WebMethod
 	public List<Room> findAll(){
 		return this.hotelRepository.findAll();
+	}
+	
+	// UPDATE 
+	@WebMethod
+	public Room updateRoom(Room room) {
+		return this.hotelRepository.save(room);
+	}
+	
+	// DELETE
+	@WebMethod
+	public void deleteById(Integer room_id) {
+		hotelRepository.deleteById(room_id);
 	}
 	
 	@WebMethod
@@ -37,22 +56,13 @@ private RoomRepository hotelRepository;
 	}
 
 	@Override
-	public Room updateRoom(Room room) {
-		return this.hotelRepository.save(room);
-	}
-
-	@Override
-	public Room findById(String id) {
+	public Room findById(Integer room_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public void deleteById(String id) {
-		// TODO Auto-generated method stub
-		
-	}
 }
+
+
 //	@Override
 //	public Room findById(String id) {
 //		return this.hotelRepository.findById(id);
@@ -62,4 +72,9 @@ private RoomRepository hotelRepository;
 //	public Room deleteById(Room room) {
 //		return this.hotelRepository.delete(room);		
 //	}
+//
+//@WebMethod
+//public Room findById(String id) {
+//	// TODO Auto-generated method stub
+//	return null;
 //}

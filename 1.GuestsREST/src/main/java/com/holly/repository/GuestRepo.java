@@ -8,4 +8,7 @@ import com.holly.model.Guest;
 
 public interface GuestRepo extends JpaRepository<Guest, Integer> {
 	public List<Guest> findAll();
+	public Guest save(Guest guest);
+	public void delete(Guest guest);
+	
 }

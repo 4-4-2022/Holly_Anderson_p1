@@ -50,15 +50,15 @@ public class Controller {
 
 	// UPDATE
 	@PutMapping("/update")
-	public Guest updateGuest(@RequestBody Guest guest) {
-		return guestRepositoryImpl.addGuest(guest);
+	public String updateGuest(@RequestBody Guest guest) {
+		return "The updated record is: " + guestRepositoryImpl.addGuest(guest);
 	}
 
 	// DELETE
 	@DeleteMapping("/delete")
 	public String deleteGuest(@RequestBody Guest guest) {
-		guestRepositoryImpl.deleteGuest(guest);
-		return "Record deleted.";
+		guestRepositoryImpl.delete(guest);
+		return "The guest's record has been deleted.";
 	}
 
 	// SECONDARY

@@ -19,12 +19,12 @@ public class Application {
 		return builder.build();
 	}
 
-//	@Bean //connect to soap room service
-//	public RestTemplate restTemplate2() {
-//		final String BASE_URL = "http://localhost:8081/soap-service"; //service port
-//		DefaultUriBuilderFactory uriBuilderFactory = new DefaultUriBuilderFactory(BASE_URL);
-//		RestTemplate restTemplate = new RestTemplate();
-//		restTemplate.setUriTemplateHandler(uriBuilderFactory);
-//		return restTemplate;  
-//	}
+	@Bean //connect to soap room service
+	public RestTemplate restTemplate2() {
+		final String BASE_URL = "http://localhost:8081/soap-service"; //service port
+		DefaultUriBuilderFactory uriBuilderFactory = new DefaultUriBuilderFactory(BASE_URL);
+		RestTemplate restTemplate2 = new RestTemplate();
+		restTemplate2.setUriTemplateHandler(uriBuilderFactory);
+		return restTemplate2;  
+	}
 }

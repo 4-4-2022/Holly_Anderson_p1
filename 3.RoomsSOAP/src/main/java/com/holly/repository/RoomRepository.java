@@ -9,9 +9,12 @@ import org.springframework.stereotype.Repository;
 import com.holly.model.Room;
 
 @Repository
-public interface RoomRepository extends JpaRepository<Room, String> {
+public interface RoomRepository extends JpaRepository<Room, Integer> {
 
 	public List<Room> findAll();
-	//public Room delete(Room room);
-	public Optional<Room> findById(String id);
+	public void delete(Room room);
+	public Optional<Room> findById(Integer room_id);
+	//public Room update(Room room);
+	public <S extends Room> S save(Room room);
+
 }
