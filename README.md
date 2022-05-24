@@ -1,10 +1,7 @@
 # Holly's Hotel
 
 ## Project Description
-This hotel booking API allows users to create, update, read, and delete guests and rooms at a hotel. 
-- 1.GuestsREST- A REST service, this allows crud commands on an api which connects to a SQL database.
-- 2.ClientREST - A RESTful API, this is the only application that the client should interface with - all data flows through this API.
-- 3.RoomsSoap - A SOAP service, this is the app that handles rooms.
+This hotel booking API allows users to create, update, read, and delete guests and rooms at a hotel. It consists of: 1.GuestsREST - A REST service, this allows crud commands on an api which connects to a SQL database, 2.ClientREST - A RESTful API, this is the only application that the client should interface with - all data flows through this API, and 3.RoomsSoap - A SOAP service, this is the app that handles rooms.
 
 ## Technologies Used
 - Java
