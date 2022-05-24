@@ -34,4 +34,4 @@ This hotel booking API allows users to create, update, read, and delete guests a
 - GET /guest/{id} - read info on one guest
 - PUT /guest/update - edit guest info 
 - DELETE /guest/delete - delete guest from DB
-- GET /guest/test - tests connection to java without SQL
+- GET /guest/test - tests connection to java without DB
